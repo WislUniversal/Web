@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Wisl Universal</title>
+    <title>✨ Wisl Universal Project</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,7 +16,10 @@
             <div class="profile-placeholder pulse-effect">
                 <i class="fas fa-crown"></i>
             </div>
-            <div class="main-title">Wisl Universal</div>
+            <div class="main-title typewriter">
+                <span id="typewriter-text"></span>
+                <span class="cursor">|</span>
+            </div>
             <div class="discord-buttons">
                 <button class="discord-btn primary ripple-effect" onclick="joinDiscord()">
                     <i class="fab fa-discord"></i>
@@ -51,7 +54,7 @@
             </div>
             <div class="code-panel">
                 <div class="script-input-container code">
-                    <input type="text" id="scriptOtherInput" value='Soon!' readonly>
+                    <input type="text" id="scriptOtherInput" value='loadstring(game:HttpGet("https://raw.githubusercontent.com/WislUniversal/script/refs/heads/main/UniversalAimbot.lua", true))()' readonly>
                     <button class="copy-btn floating-copy ripple-effect" onclick="copyScriptOther()">
                         <i class="fas fa-copy"></i>
                     </button>
@@ -194,10 +197,53 @@
             cancelAnimationFrame(RAF);
             draw();
         }
+        function initTypewriter() {
+            const prefix = '✨ ';
+            const textToType = 'Wisl Universal Project';
+            const typewriterElement = document.getElementById('typewriter-text');
+            let currentCharIndex = textToType.length;
+            let isDeleting = false;
+            let typingSpeed = 150;
+            typewriterElement.textContent = prefix + textToType;
+            function type() {
+                const currentText = prefix + textToType.substring(0, currentCharIndex);
+                if (isDeleting) {
+                    typewriterElement.textContent = currentText;
+                    document.title = currentText;
+                    currentCharIndex--;
+                    typingSpeed = 75;
+                    if (currentCharIndex < 0) {
+                        currentCharIndex = 0;
+                        isDeleting = false;
+                        typingSpeed = 300;
+                    }
+                } else {
+                    typewriterElement.textContent = currentText;
+                    document.title = currentText;
+                    currentCharIndex++;
+                    typingSpeed = 150;
+                    if (currentCharIndex > textToType.length) {
+                        currentCharIndex = textToType.length;
+                        setTimeout(() => {
+                            isDeleting = true;
+                            typingSpeed = 50;
+                            setTimeout(type, typingSpeed);
+                        }, 2000);
+                        return;
+                    }
+                }
+                setTimeout(type, typingSpeed);
+            }
+            setTimeout(() => {
+                isDeleting = true;
+                type();
+            }, 2000);
+        }
         document.addEventListener('DOMContentLoaded', () => {
             initScrollAnimations();
             initButtons();
             initStars();
+            initTypewriter();
         });
     </script>
 </body>
