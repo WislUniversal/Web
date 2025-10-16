@@ -44,7 +44,7 @@
                 </div>
             </div>
         </div>
-        <div class="script-card modern hover-glow" data-animation-delay="400">
+        <div class="script-card modern hover-glow" data-animation-delay="200">
             <div class="panel-head">
                 <div class="title-wrap">
                     <i class="fa-solid fa-crosshairs"></i>
@@ -56,6 +56,23 @@
                 <div class="script-input-container code">
                     <input type="text" id="scriptOtherInput" value='loadstring(game:HttpGet("https://raw.githubusercontent.com/WislUniversal/script/refs/heads/main/UniversalAimbot.lua", true))()' readonly>
                     <button class="copy-btn floating-copy ripple-effect" onclick="copyScriptOther()">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="script-card modern hover-glow" data-animation-delay="200">
+            <div class="panel-head">
+                <div class="title-wrap">
+                    <i class="fa-solid fa-shield"></i>
+                    <div class="heading">Wisl Evade Script</div>
+                    <span class="tag lua">Lua</span>
+                </div>
+            </div>
+            <div class="code-panel">
+                <div class="script-input-container code">
+                    <input type="text" id="scriptEvadeInput" value='loadstring(game:HttpGet("https://raw.githubusercontent.com/WislUniversal/script/refs/heads/main/Evade.lua", true))()' readonly>
+                    <button class="copy-btn floating-copy ripple-effect" onclick="copyScriptEvade()">
                         <i class="fas fa-copy"></i>
                     </button>
                 </div>
@@ -92,6 +109,20 @@
             }).catch(() => {
                 document.execCommand('copy');
                 showToast('Aimbot/ESP Script copied to clipboard!');
+                addCopyAnimation(copyBtn);
+            });
+        }
+        function copyScriptEvade() {
+            const scriptEvadeInput = document.getElementById('scriptEvadeInput');
+            const copyBtn = document.querySelector('#scriptEvadeInput').nextElementSibling;
+            scriptEvadeInput.select();
+            scriptEvadeInput.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(scriptEvadeInput.value).then(() => {
+                showToast('Evade Script copied to clipboard!');
+                addCopyAnimation(copyBtn);
+            }).catch(() => {
+                document.execCommand('copy');
+                showToast('Evade Script copied to clipboard!');
                 addCopyAnimation(copyBtn);
             });
         }
