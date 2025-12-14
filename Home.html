@@ -1,264 +1,393 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>✨ Wisl Universal Project</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="top-light"></div>
-    <canvas id="bg-stars"></canvas>
-    <div class="bg-noise"></div>
-    <div class="container">
-        <div class="header-card hover-glow" data-animation-delay="0">
-            <div class="profile-placeholder pulse-effect">
-                <i class="fas fa-crown"></i>
-            </div>
-            <div class="main-title typewriter">
-                <span id="typewriter-text"></span>
-                <span class="cursor">|</span>
-            </div>
-            <div class="discord-buttons">
-                <button class="discord-btn primary ripple-effect" onclick="joinDiscord()">
-                    <i class="fab fa-discord"></i>
-                    Join Discord
-                </button>
-            </div>
-        </div>
-        <div class="script-card modern hover-glow" data-animation-delay="200">
-            <div class="panel-head">
-                <div class="title-wrap">
-                    <div class="heading">Wisl Universal</div>
-                    <span class="tag lua">Lua</span>
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+        <title>✨ Wisl Universal Project</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        />
+    </head>
+    <body>
+        <div class="top-light"></div>
+        <canvas id="bg-stars"></canvas>
+        <div class="bg-noise"></div>
+
+        <div class="container">
+            <div class="header-card hover-glow" data-animation-delay="0">
+                <div class="profile-placeholder pulse-effect">
+                    <i class="fas fa-crown"></i>
                 </div>
-            </div>
-            <div class="code-panel">
-                <div class="script-input-container code">
-                    <input type="text" id="scriptInput" value='loadstring(game:HttpGet("https://raw.githubusercontent.com/WislUniversal/script/refs/heads/main/Universal.lua", true))()' readonly>
-                    <button class="copy-btn floating-copy ripple-effect" onclick="copyScript()">
-                        <i class="fas fa-copy"></i>
+                <div class="main-title typewriter">
+                    <span id="typewriter-text"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <div class="discord-buttons">
+                    <button
+                        class="discord-btn primary ripple-effect"
+                        onclick="joinDiscord()"
+                    >
+                        <i class="fab fa-discord"></i>
+                        Join Discord
                     </button>
                 </div>
             </div>
+
+            <div
+                class="script-card modern hover-glow"
+                data-animation-delay="200"
+            >
+                <div class="panel-head">
+                    <div class="title-wrap">
+                        <div class="heading">Wisl Universal</div>
+                        <span class="tag lua">Lua</span>
+                    </div>
+                </div>
+                <div class="code-panel">
+                    <div class="script-input-container code">
+                        <input
+                            type="text"
+                            id="scriptInput"
+                            value='loadstring(game:HttpGet("https://raw.githubusercontent.com/WislUniversal/script/refs/heads/main/Universal.lua", true))()'
+                            readonly
+                        />
+                        <button
+                            class="copy-btn floating-copy ripple-effect"
+                            onclick="copyScript()"
+                        >
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="script-card modern hover-glow"
+                data-animation-delay="200"
+            >
+                <div class="panel-head">
+                    <div class="title-wrap">
+                        <div class="heading">Wisl Universal Esp / Aimbot</div>
+                        <span class="tag lua">Lua</span>
+                    </div>
+                </div>
+                <div class="code-panel">
+                    <div class="script-input-container code">
+                        <input
+                            type="text"
+                            id="scriptOtherInput"
+                            value='loadstring(game:HttpGet("https://raw.githubusercontent.com/WislUniversal/script/refs/heads/main/UniversalAimbot.lua", true))()'
+                            readonly
+                        />
+                        <button
+                            class="copy-btn floating-copy ripple-effect"
+                            onclick="copyScriptOther()"
+                        >
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="script-card modern hover-glow"
+                data-animation-delay="200"
+            >
+                <div class="panel-head">
+                    <div class="title-wrap">
+                        <div class="heading">Wisl Evade Script</div>
+                        <span class="tag lua">Lua</span>
+                    </div>
+                </div>
+                <div class="code-panel">
+                    <div class="script-input-container code">
+                        <input
+                            type="text"
+                            id="scriptEvadeInput"
+                            value='loadstring(game:HttpGet("https://raw.githubusercontent.com/WislUniversal/script/refs/heads/main/Evade.lua", true))()'
+                            readonly
+                        />
+                        <button
+                            class="copy-btn floating-copy ripple-effect"
+                            onclick="copyScriptEvade()"
+                        >
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="script-card modern hover-glow" data-animation-delay="200">
-            <div class="panel-head">
-                <div class="title-wrap">
-                    <div class="heading">Wisl Universal Esp / Aimbot</div>
-                    <span class="tag lua">Lua</span>
-                </div>
-            </div>
-            <div class="code-panel">
-                <div class="script-input-container code">
-                    <input type="text" id="scriptOtherInput" value='loadstring(game:HttpGet("https://raw.githubusercontent.com/WislUniversal/script/refs/heads/main/UniversalAimbot.lua", true))()' readonly>
-                    <button class="copy-btn floating-copy ripple-effect" onclick="copyScriptOther()">
-                        <i class="fas fa-copy"></i>
-                    </button>
-                </div>
-            </div>
+
+        <div id="toast" class="toast">
+            <i class="fas fa-check-circle"></i>
+            <span id="toastMessage">Script copied to clipboard!</span>
         </div>
-        <div class="script-card modern hover-glow" data-animation-delay="200">
-            <div class="panel-head">
-                <div class="title-wrap">
-                    <div class="heading">Wisl Evade Script</div>
-                    <span class="tag lua">Lua</span>
-                </div>
-            </div>
-            <div class="code-panel">
-                <div class="script-input-container code">
-                    <input type="text" id="scriptEvadeInput" value='loadstring(game:HttpGet("https://raw.githubusercontent.com/WislUniversal/script/refs/heads/main/Evade.lua", true))()' readonly>
-                    <button class="copy-btn floating-copy ripple-effect" onclick="copyScriptEvade()">
-                        <i class="fas fa-copy"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="toast" class="toast">
-        <i class="fas fa-check-circle"></i>
-        <span id="toastMessage">Script copied to clipboard!</span>
-    </div>
-    <script>
-        function handleCopy(inputId, btnElement, message) {
-            const input = document.getElementById(inputId);
-            input.select();
-            input.setSelectionRange(0, 99999);
-            const copyText = input.value;
-            navigator.clipboard.writeText(copyText).then(() => {
-                showToast(message);
-                addCopyAnimation(btnElement);
-            }).catch(() => {
-                document.execCommand('copy');
-                showToast(message);
-                addCopyAnimation(btnElement);
-            });
-        }
 
-        function copyScript() {
-            handleCopy('scriptInput', document.querySelector('#scriptInput').nextElementSibling, 'Universal Script copied to clipboard!');
-        }
+        <script>
+            function handleCopy(inputId, btnElement, message) {
+                const input = document.getElementById(inputId);
+                input.select();
+                input.setSelectionRange(0, 99999);
 
-        function copyScriptOther() {
-            handleCopy('scriptOtherInput', document.querySelector('#scriptOtherInput').nextElementSibling, 'Aimbot/ESP Script copied to clipboard!');
-        }
-
-        function copyScriptEvade() {
-            handleCopy('scriptEvadeInput', document.querySelector('#scriptEvadeInput').nextElementSibling, 'Evade Script copied to clipboard!');
-        }
-
-        function addCopyAnimation(button) {
-            button.classList.add('copied');
-            button.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                button.style.transform = '';
-                button.classList.remove('copied');
-            }, 1500);
-        }
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            const toastMessage = document.getElementById('toastMessage');
-            toastMessage.textContent = message;
-            toast.classList.add('show');
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 2500);
-        }
-        function joinDiscord() {
-            window.open('https://discord.gg/XSUduWp52q', '_blank');
-        }
-        function initScrollAnimations() {
-            const cards = document.querySelectorAll('.header-card, .script-card');
-            const observerOptions = { root: null, rootMargin: '0px 0px -100px 0px', threshold: 0.1 };
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    const card = entry.target;
-                    const delay = parseInt(card.getAttribute('data-animation-delay')) || 0;
-                    if (entry.isIntersecting) {
-                        setTimeout(() => { card.classList.remove('card-hidden'); card.classList.add('card-visible'); }, delay);
-                    } else {
-                        card.classList.remove('card-visible');
-                        card.classList.add('card-hidden');
-                    }
-                });
-            }, observerOptions);
-            cards.forEach(card => { card.classList.add('card-hidden'); observer.observe(card); });
-        }
-        function initButtons() {
-            const buttons = document.querySelectorAll('.copy-btn, .discord-btn');
-            buttons.forEach(button => {
-                button.addEventListener('mouseenter', function() { this.style.transform = 'translateY(-2px) scale(1.05)'; });
-                button.addEventListener('mouseleave', function() { this.style.transform = ''; });
-            });
-            const inputs = document.querySelectorAll('input[type="text"]');
-            inputs.forEach(input => {
-                input.addEventListener('focus', function() { this.parentElement.style.transform = 'scale(1.02)'; });
-                input.addEventListener('blur', function() { this.parentElement.style.transform = ''; });
-            });
-        }
-        function initStars() {
-            const c = document.getElementById('bg-stars');
-            const ctx = c.getContext('2d');
-            let w, h, stars, RAF;
-            function resize() { w = c.width = window.innerWidth; h = c.height = window.innerHeight; make(); }
-            function make() {
-                const count = Math.min(220, Math.floor((w * h) / 8000));
-                stars = new Array(count).fill(0).map(() => ({
-                    x: Math.random() * w,
-                    y: Math.random() * h,
-                    z: Math.random() * 0.6 + 0.4,
-                    vx: (Math.random() - 0.5) * 0.2,
-                    vy: (Math.random() - 0.5) * 0.2
-                }));
+                navigator.clipboard
+                    .writeText(input.value)
+                    .then(() => {
+                        showToast(message);
+                        addCopyAnimation(btnElement);
+                    })
+                    .catch(() => {
+                        document.execCommand("copy");
+                        showToast(message);
+                        addCopyAnimation(btnElement);
+                    });
             }
-            function draw() {
-                ctx.clearRect(0, 0, w, h);
-                for (let i = 0; i < stars.length; i++) {
-                    const s = stars[i];
-                    s.x += s.vx; s.y += s.vy;
-                    if (s.x < -50) s.x = w + 50; if (s.x > w + 50) s.x = -50; if (s.y < -50) s.y = h + 50; if (s.y > h + 50) s.y = -50;
+
+            function copyScript() {
+                const btn =
+                    document.querySelector("#scriptInput").nextElementSibling;
+                handleCopy(
+                    "scriptInput",
+                    btn,
+                    "Universal Script copied to clipboard!",
+                );
+            }
+
+            function copyScriptOther() {
+                const btn =
+                    document.querySelector(
+                        "#scriptOtherInput",
+                    ).nextElementSibling;
+                handleCopy(
+                    "scriptOtherInput",
+                    btn,
+                    "Aimbot/ESP Script copied to clipboard!",
+                );
+            }
+
+            function copyScriptEvade() {
+                const btn =
+                    document.querySelector(
+                        "#scriptEvadeInput",
+                    ).nextElementSibling;
+                handleCopy(
+                    "scriptEvadeInput",
+                    btn,
+                    "Evade Script copied to clipboard!",
+                );
+            }
+
+            function addCopyAnimation(button) {
+                button.classList.add("copied");
+                button.style.transform = "scale(0.95)";
+                setTimeout(() => {
+                    button.style.transform = "";
+                    button.classList.remove("copied");
+                }, 1500);
+            }
+
+            function showToast(message) {
+                const toast = document.getElementById("toast");
+                const toastMessage = document.getElementById("toastMessage");
+                toastMessage.textContent = message;
+                toast.classList.add("show");
+                setTimeout(() => toast.classList.remove("show"), 2500);
+            }
+
+            function joinDiscord() {
+                window.open("https://discord.gg/XSUduWp52q", "_blank");
+            }
+
+            function initScrollAnimations() {
+                const cards = document.querySelectorAll(
+                    ".header-card, .script-card",
+                );
+                const options = {
+                    root: null,
+                    rootMargin: "0px 0px -100px 0px",
+                    threshold: 0.1,
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        const card = entry.target;
+                        const delay =
+                            parseInt(
+                                card.getAttribute("data-animation-delay"),
+                            ) || 0;
+
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                card.classList.remove("card-hidden");
+                                card.classList.add("card-visible");
+                            }, delay);
+                        } else {
+                            card.classList.remove("card-visible");
+                            card.classList.add("card-hidden");
+                        }
+                    });
+                }, options);
+
+                cards.forEach((card) => {
+                    card.classList.add("card-hidden");
+                    observer.observe(card);
+                });
+            }
+
+            function initButtons() {
+                const buttons = document.querySelectorAll(
+                    ".copy-btn, .discord-btn",
+                );
+                buttons.forEach((button) => {
+                    button.addEventListener("mouseenter", function () {
+                        this.style.transform = "translateY(-2px) scale(1.05)";
+                    });
+                    button.addEventListener("mouseleave", function () {
+                        this.style.transform = "";
+                    });
+                });
+
+                const inputs = document.querySelectorAll('input[type="text"]');
+                inputs.forEach((input) => {
+                    input.addEventListener("focus", function () {
+                        this.parentElement.style.transform = "scale(1.02)";
+                    });
+                    input.addEventListener("blur", function () {
+                        this.parentElement.style.transform = "";
+                    });
+                });
+            }
+
+            function initStars() {
+                const canvas = document.getElementById("bg-stars");
+                const ctx = canvas.getContext("2d");
+                let w, h, stars, RAF;
+
+                function resize() {
+                    w = canvas.width = window.innerWidth;
+                    h = canvas.height = window.innerHeight;
+                    createStars();
                 }
-                for (let i = 0; i < stars.length; i++) {
-                    const s = stars[i];
-                    const r = s.z * 1.2;
-                    ctx.beginPath();
-                    ctx.arc(s.x, s.y, r, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(139, 92, 246, ${0.35 * s.z})`;
-                    ctx.fill();
+
+                function createStars() {
+                    const count = Math.min(220, Math.floor((w * h) / 8000));
+                    stars = Array.from({ length: count }, () => ({
+                        x: Math.random() * w,
+                        y: Math.random() * h,
+                        z: Math.random() * 0.6 + 0.4,
+                        vx: (Math.random() - 0.5) * 0.2,
+                        vy: (Math.random() - 0.5) * 0.2,
+                    }));
                 }
-                ctx.lineWidth = 1;
-                for (let i = 0; i < stars.length; i++) {
-                    for (let j = i + 1; j < stars.length; j++) {
-                        const a = stars[i], b = stars[j];
-                        const dx = a.x - b.x, dy = a.y - b.y;
-                        const d2 = dx * dx + dy * dy;
-                        if (d2 < 14000) {
-                            const o = 1 - d2 / 14000;
-                            ctx.strokeStyle = `rgba(139, 92, 246, ${0.18 * o})`;
-                            ctx.beginPath();
-                            ctx.moveTo(a.x, a.y);
-                            ctx.lineTo(b.x, b.y);
-                            ctx.stroke();
+
+                function draw() {
+                    ctx.clearRect(0, 0, w, h);
+
+                    for (const s of stars) {
+                        s.x += s.vx;
+                        s.y += s.vy;
+                        if (s.x < -50) s.x = w + 50;
+                        if (s.x > w + 50) s.x = -50;
+                        if (s.y < -50) s.y = h + 50;
+                        if (s.y > h + 50) s.y = -50;
+                    }
+
+                    for (const s of stars) {
+                        ctx.beginPath();
+                        ctx.arc(s.x, s.y, s.z * 1.2, 0, Math.PI * 2);
+                        ctx.fillStyle = `rgba(139, 92, 246, ${0.35 * s.z})`;
+                        ctx.fill();
+                    }
+
+                    ctx.lineWidth = 1;
+                    for (let i = 0; i < stars.length; i++) {
+                        for (let j = i + 1; j < stars.length; j++) {
+                            const a = stars[i];
+                            const b = stars[j];
+                            const dx = a.x - b.x;
+                            const dy = a.y - b.y;
+                            const d2 = dx * dx + dy * dy;
+
+                            if (d2 < 14000) {
+                                const opacity = 1 - d2 / 14000;
+                                ctx.strokeStyle = `rgba(139, 92, 246, ${0.18 * opacity})`;
+                                ctx.beginPath();
+                                ctx.moveTo(a.x, a.y);
+                                ctx.lineTo(b.x, b.y);
+                                ctx.stroke();
+                            }
                         }
                     }
+
+                    RAF = requestAnimationFrame(draw);
                 }
-                RAF = requestAnimationFrame(draw);
+
+                window.addEventListener("resize", resize);
+                resize();
+                cancelAnimationFrame(RAF);
+                draw();
             }
-            window.addEventListener('resize', resize);
-            resize();
-            cancelAnimationFrame(RAF);
-            draw();
-        }
-        function initTypewriter() {
-            const prefix = '✨ ';
-            const textToType = 'Wisl Universal Project';
-            const typewriterElement = document.getElementById('typewriter-text');
-            let currentCharIndex = textToType.length;
-            let isDeleting = false;
-            let typingSpeed = 150;
-            typewriterElement.textContent = prefix + textToType;
-            function type() {
-                const currentText = prefix + textToType.substring(0, currentCharIndex);
-                if (isDeleting) {
-                    typewriterElement.textContent = currentText;
+
+            function initTypewriter() {
+                const prefix = "✨ ";
+                const text = "Wisl Universal Project";
+                const element = document.getElementById("typewriter-text");
+                let charIndex = text.length;
+                let isDeleting = false;
+                let speed = 150;
+
+                element.textContent = prefix + text;
+
+                function type() {
+                    const currentText = prefix + text.substring(0, charIndex);
+                    element.textContent = currentText;
                     document.title = currentText;
-                    currentCharIndex--;
-                    typingSpeed = 75;
-                    if (currentCharIndex < 0) {
-                        currentCharIndex = 0;
-                        isDeleting = false;
-                        typingSpeed = 300;
+
+                    if (isDeleting) {
+                        charIndex--;
+                        speed = 75;
+                        if (charIndex < 0) {
+                            charIndex = 0;
+                            isDeleting = false;
+                            speed = 300;
+                        }
+                    } else {
+                        charIndex++;
+                        speed = 150;
+                        if (charIndex > text.length) {
+                            charIndex = text.length;
+                            setTimeout(() => {
+                                isDeleting = true;
+                                speed = 50;
+                                setTimeout(type, speed);
+                            }, 2000);
+                            return;
+                        }
                     }
-                } else {
-                    typewriterElement.textContent = currentText;
-                    document.title = currentText;
-                    currentCharIndex++;
-                    typingSpeed = 150;
-                    if (currentCharIndex > textToType.length) {
-                        currentCharIndex = textToType.length;
-                        setTimeout(() => {
-                            isDeleting = true;
-                            typingSpeed = 50;
-                            setTimeout(type, typingSpeed);
-                        }, 2000);
-                        return;
-                    }
+
+                    setTimeout(type, speed);
                 }
-                setTimeout(type, typingSpeed);
+
+                setTimeout(() => {
+                    isDeleting = true;
+                    type();
+                }, 2000);
             }
-            setTimeout(() => {
-                isDeleting = true;
-                type();
-            }, 2000);
-        }
-        document.addEventListener('DOMContentLoaded', () => {
-            initScrollAnimations();
-            initButtons();
-            initStars();
-            initTypewriter();
-        });
-    </script>
-</body>
+
+            document.addEventListener("DOMContentLoaded", () => {
+                initScrollAnimations();
+                initButtons();
+                initStars();
+                initTypewriter();
+            });
+        </script>
+    </body>
 </html>
