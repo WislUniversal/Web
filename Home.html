@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="top-light"></div>
     <canvas id="bg-stars"></canvas>
     <div class="bg-noise"></div>
     <div class="container">
@@ -30,8 +31,7 @@
         <div class="script-card modern hover-glow" data-animation-delay="200">
             <div class="panel-head">
                 <div class="title-wrap">
-                    <i class="fa-solid fa-terminal"></i>
-                    <div class="heading">Wisl Universal Script</div>
+                    <div class="heading">Wisl Universal</div>
                     <span class="tag lua">Lua</span>
                 </div>
             </div>
@@ -47,7 +47,6 @@
         <div class="script-card modern hover-glow" data-animation-delay="200">
             <div class="panel-head">
                 <div class="title-wrap">
-                    <i class="fa-solid fa-crosshairs"></i>
                     <div class="heading">Wisl Universal Esp / Aimbot</div>
                     <span class="tag lua">Lua</span>
                 </div>
@@ -64,7 +63,6 @@
         <div class="script-card modern hover-glow" data-animation-delay="200">
             <div class="panel-head">
                 <div class="title-wrap">
-                    <i class="fa-solid fa-shield"></i>
                     <div class="heading">Wisl Evade Script</div>
                     <span class="tag lua">Lua</span>
                 </div>
@@ -84,48 +82,33 @@
         <span id="toastMessage">Script copied to clipboard!</span>
     </div>
     <script>
+        function handleCopy(inputId, btnElement, message) {
+            const input = document.getElementById(inputId);
+            input.select();
+            input.setSelectionRange(0, 99999);
+            const copyText = input.value;
+            navigator.clipboard.writeText(copyText).then(() => {
+                showToast(message);
+                addCopyAnimation(btnElement);
+            }).catch(() => {
+                document.execCommand('copy');
+                showToast(message);
+                addCopyAnimation(btnElement);
+            });
+        }
+
         function copyScript() {
-            const scriptInput = document.getElementById('scriptInput');
-            const copyBtn = document.querySelector('#scriptInput').nextElementSibling;
-            scriptInput.select();
-            scriptInput.setSelectionRange(0, 99999);
-            navigator.clipboard.writeText(scriptInput.value).then(() => {
-                showToast('Script copied to clipboard!');
-                addCopyAnimation(copyBtn);
-            }).catch(() => {
-                document.execCommand('copy');
-                showToast('Script copied to clipboard!');
-                addCopyAnimation(copyBtn);
-            });
+            handleCopy('scriptInput', document.querySelector('#scriptInput').nextElementSibling, 'Universal Script copied to clipboard!');
         }
+
         function copyScriptOther() {
-            const scriptOtherInput = document.getElementById('scriptOtherInput');
-            const copyBtn = document.querySelector('#scriptOtherInput').nextElementSibling;
-            scriptOtherInput.select();
-            scriptOtherInput.setSelectionRange(0, 99999);
-            navigator.clipboard.writeText(scriptOtherInput.value).then(() => {
-                showToast('Aimbot/ESP Script copied to clipboard!');
-                addCopyAnimation(copyBtn);
-            }).catch(() => {
-                document.execCommand('copy');
-                showToast('Aimbot/ESP Script copied to clipboard!');
-                addCopyAnimation(copyBtn);
-            });
+            handleCopy('scriptOtherInput', document.querySelector('#scriptOtherInput').nextElementSibling, 'Aimbot/ESP Script copied to clipboard!');
         }
+
         function copyScriptEvade() {
-            const scriptEvadeInput = document.getElementById('scriptEvadeInput');
-            const copyBtn = document.querySelector('#scriptEvadeInput').nextElementSibling;
-            scriptEvadeInput.select();
-            scriptEvadeInput.setSelectionRange(0, 99999);
-            navigator.clipboard.writeText(scriptEvadeInput.value).then(() => {
-                showToast('Evade Script copied to clipboard!');
-                addCopyAnimation(copyBtn);
-            }).catch(() => {
-                document.execCommand('copy');
-                showToast('Evade Script copied to clipboard!');
-                addCopyAnimation(copyBtn);
-            });
+            handleCopy('scriptEvadeInput', document.querySelector('#scriptEvadeInput').nextElementSibling, 'Evade Script copied to clipboard!');
         }
+
         function addCopyAnimation(button) {
             button.classList.add('copied');
             button.style.transform = 'scale(0.95)';
@@ -202,7 +185,7 @@
                     const r = s.z * 1.2;
                     ctx.beginPath();
                     ctx.arc(s.x, s.y, r, 0, Math.PI * 2);
-                    ctx.fillStyle = `rgba(99,102,241,${0.35 * s.z})`;
+                    ctx.fillStyle = `rgba(139, 92, 246, ${0.35 * s.z})`;
                     ctx.fill();
                 }
                 ctx.lineWidth = 1;
@@ -213,7 +196,7 @@
                         const d2 = dx * dx + dy * dy;
                         if (d2 < 14000) {
                             const o = 1 - d2 / 14000;
-                            ctx.strokeStyle = `rgba(99,102,241,${0.18 * o})`;
+                            ctx.strokeStyle = `rgba(139, 92, 246, ${0.18 * o})`;
                             ctx.beginPath();
                             ctx.moveTo(a.x, a.y);
                             ctx.lineTo(b.x, b.y);
